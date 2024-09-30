@@ -42,3 +42,6 @@ class Loss(nn.Module):
             self.criterion = LabelSmoothingLoss(classes=num_classes, smoothing=label_smoothing)
         else:
             self.criterion = nn.CrossEntropyLoss()
+
+    def forward(self, outputs, targets):
+        return self.criterion(outputs, targets)

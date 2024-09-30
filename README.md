@@ -31,7 +31,6 @@ level1-cv-10
 ├── train.py
 ├── train.sh
 ├── inference.py
-├── inference.sh
 ├── ensemble.py
 ├── requirements.txt
 ├── .gitignore

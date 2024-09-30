@@ -75,7 +75,7 @@ pip install -r requirements.txt
 python train.py
 ```
 
-대회에 제출한 7개의 모델을 한 번에 학습시키길 원한다면, 아래의 쉘 스크립트 파일을 실행하면 된다.
+여러 개의 모델을 한 번에 학습시키길 원한다면, 아래의 쉘 스크립트 파일을 수정해 실행시키면 된다.
 ```sh
 $ ./train.sh
 ```
@@ -83,9 +83,4 @@ $ ./train.sh
 ### Inference
 ```bash
 python inference.py
-```
-
-여러개의 모델을 한 번에 추론, 앙상블하고 싶다면 아래의 쉘 스크립트 파일을 실행하면 된다.
-```sh
-$ ./inference.sh
 ```

@@ -9,12 +9,12 @@ from src.transforms import TransformSelector
 from src.model import ModelSelector
 from src.args import get_args
 
-def load_data(file_path: str, is_test: bool = True):
+def load_data(file_path: str):
     df = pd.read_csv(file_path)
     return df
 
 def inference(model, device, test_loader):
-    model.eval() # 평가모드로 설정
+    model.eval()  # 평가모드로 설정
     predictions = []
     with torch.no_grad():
         for images in tqdm(test_loader, desc="Inferencing"):
@@ -30,7 +30,7 @@ def main():
     device = torch.device(args.device)
 
     # 테스트 데이터 로드
-    test_info = load_data(args.testdata_info_file, is_test=True)
+    test_info = load_data(args.testdata_info_file)
 
     # Transform 설정
     transform_selector = TransformSelector("albumentations")

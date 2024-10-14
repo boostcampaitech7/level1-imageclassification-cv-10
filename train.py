@@ -29,7 +29,7 @@ def main():
     )
 
     # Transform 설정
-    transform_selector = TransformSelector("albumentations")
+    transform_selector = TransformSelector(args.transform_type)
     train_transform = transform_selector.get_transform(is_train=True)
     val_transform = transform_selector.get_transform(is_train=False)
 
@@ -64,17 +64,17 @@ def main():
 
     # Trainer 설정 및 학습
     trainer = Trainer(
-        args=args, 
-        model=model, 
-        model_name=args.model_name,
+        model=model,
         device=device,
         train_loader=train_loader,
         val_loader=val_loader,
         optimizer=optimizer,
         scheduler=scheduler,
         loss_fn=loss_fn,
+        model_name=args.model_name,
         result_path=args.model_dir,
-        mixup_args=mixup_args
+        mixup_args=mixup_args,
+        epochs=args.epochs,
     )
     trainer.train()
 

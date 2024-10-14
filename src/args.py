@@ -12,6 +12,7 @@ def get_args():
     parser.add_argument('--val_ratio', type=float, default=0.2, help='Validation set size (default: 0.2)') # 검증 데이터 비율 설정
     
     # 모델 관련 파라미터
+    parser.add_argument('--transform_type', type=str, default='albumentations', help='Type of transform to use (e.g., albumentations, torchvision)')
     parser.add_argument('--model_type', type=str, default='timm', help='Model type (default: timm)') # 모델 타입
     parser.add_argument('--model_name', type=str, default='swin_s3_base_224', help='Model name (default: swin_s3_base_224)') # 모델 이름
     parser.add_argument('--pretrained', type=bool, default=True, help='Use pretrained model (default: True)') # 사전 학습된 모델 사용 여부
